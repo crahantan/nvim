@@ -4,7 +4,7 @@
 require ('config.options')
 
 -->Keymaps Config
-require('config.keymaps.keymaps')
+require('config.keymaps')
 
 -->Lazy Config
 require('config.lazy')
@@ -25,10 +25,8 @@ require('ui.lualine-ui')
 --->> Setups
 
 -->Treesitter Config
-require('config.nvim-treesitter-setup')
 
 -->CMP Setup
-require('config.nvim-cmp-setup')
 
 -->Colorscheme
 vim.cmd.colorscheme('abscs')
