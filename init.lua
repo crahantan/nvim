@@ -1,5 +1,4 @@
 --->> Configuration 
-
 -->Options Config
 require ('config.options')
 
