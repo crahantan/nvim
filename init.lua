@@ -1,12 +1,12 @@
 --->> Configuration 
 -->Options Config
-require ('config.options')
+require ('core.options')
 
 -->Keymaps Config
-require('config.keymaps')
+require('core.keymaps')
 
 -->Lazy Config
-require('config.lazy')
+require('core.lazy')
 
 -->LSP Config
 require('lsp.lsp-config')
@@ -20,15 +20,10 @@ require('ui.mason-ui')
 -->Lualine UI
 require('ui.lualine-ui')
 
-
---->> Setups
-
--->Treesitter Config
-
--->CMP Setup
+-->Pineapple themes
+require('ui.pineapple_themes')
 
 -->Colorscheme
-vim.cmd.colorscheme('abscs')
-
+vim.cmd [[colorscheme kanagawa-dragon]]
 
 

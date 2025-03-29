@@ -11,9 +11,15 @@ return{
   	lazy = false, -- neo-tree will lazily load itself
   	---@module "neo-tree"
   	---@type neotree.Config?
-  	opts = {
-    	-- fill any relevant options here
-  	},
+ 		opts = {
+      filesystem = {
+        follow_current_file = enabled, -- Seguir el archivo activo
+      },
+      window = {
+        position = "left", -- Habilitar ventana flotante
+        width = 40, -- Ajusta el ancho de la ventana flotante
+      },
+		}
 	}
 }
 

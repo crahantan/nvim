@@ -4,7 +4,12 @@ local lspconfig =	require('lspconfig')
 lspconfig.lua_ls.setup {
 	settings = {
 
+	}
+}
 
+-->clangd
+lspconfig.clangd.setup {
+	settings = {
 	}
 }
 
