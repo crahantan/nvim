@@ -1,81 +1,70 @@
-# Configuración Personal de Neovim
+```markdown
+# Personal Neovim Configuration
 
-![Descripción de la imagen](./img.png)
+![Image description](./img.png)
 
-Este repositorio contiene mis archivos de configuración personalizados para Neovim, diseñados para optimizar y mejorar la experiencia de edición.
+This repository contains my personal configuration files for Neovim, designed to optimize and enhance the editing experience.
 
-## Estructura del Repositorio
+## Repository Structure
 
-- `init.lua`: Archivo principal de configuración que inicializa y configura los plugins y ajustes personalizados.
-- `lua/`: Directorio que contiene módulos Lua adicionales utilizados en la configuración.
+- `init.lua`: Main configuration file that initializes and sets up plugins and custom settings.
+- `lua/`: Directory containing additional Lua modules used in the configuration.
 
-## Instalación
+## Installation
 
-1. **Clonar el repositorio:**
+1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/crahantan/nvim-dotfiles.git ~/.config/nvim
+   git clone [https://github.com/crahantan/nvim-dotfiles.git](https://github.com/crahantan/nvim-dotfiles.git) ~/.config/nvim
    ```
 
-2. **Iniciar Neovim:**
+2. **Start Neovim:**
 
-   Al abrir Neovim, los plugins especificados en la configuración se instalarán automáticamente.
+   Upon opening Neovim, the plugins specified in the configuration will be installed automatically.
 
-## Plugins Utilizados
+## Used Plugins
 
-Los plugins incluidos en esta configuración se encuentran en el directorio `lua/plugins/`. Algunos de ellos son:
+The plugins included in this configuration are located in the `lua/plugins/` directory. Some of them are:
 
-- **[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter):** Proporciona resaltado de sintaxis avanzado y mejoras en el parsing del código.
-- **[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig):** Configuración para servidores de lenguaje en Neovim.
-- **[neotree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim):** Explorador de archivos avanzado.
-- **[mason.nvim](https://github.com/williamboman/mason.nvim):** Gestor de herramientas para LSP, DAP y linters.
-- **[lazy.nvim](https://github.com/folke/lazy.nvim):** Administrador de paquetes moderno y eficiente para Neovim.
-- **[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim):** Barra de estado altamente personalizable.
-- **[cmp-nvim](https://github.com/hrsh7th/nvim-cmp):** Autocompletado avanzado para Neovim.
-- **[cmp-buffer](https://github.com/hrsh7th/cmp-buffer):** Fuente de autocompletado basada en el buffer actual.
-- **[cmp-path](https://github.com/hrsh7th/cmp-path):** Autocompletado de rutas de archivos.
-- **[cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline):** Autocompletado en la línea de comandos de Neovim.
-- **[luasnip](https://github.com/L3MON4D3/LuaSnip):** Motor de snippets para Neovim.
-- **[comment.nvim](https://github.com/numToStr/Comment.nvim):** Facilita la adición y eliminación de comentarios en el código.
-- **[pineapple.nvim](https://github.com/crahantan/pineapple.nvim):** Plugin personalizado para mejorar la productividad en Neovim.
+- **[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter):** Provides advanced syntax highlighting and code parsing improvements.
+- **[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig):** Configuration for language servers in Neovim.
+- **[neotree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim):** Advanced file explorer.
+- **[mason.nvim](https://github.com/williamboman/mason.nvim):** Tool manager for LSP, DAP, and linters.
+- **[lazy.nvim](https://github.com/folke/lazy.nvim):** Modern and efficient package manager for Neovim.
+- **[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim):** Highly customizable status line.
+- **[cmp-nvim](https://github.com/hrsh7th/nvim-cmp):** Advanced auto-completion for Neovim.
+- **[cmp-buffer](https://github.com/hrsh7th/cmp-buffer):** Auto-completion source based on the current buffer.
+- **[cmp-path](https://github.com/hrsh7th/cmp-path):** Auto-completion of file paths.
+- **[cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline):** Auto-completion in the Neovim command line.
+- **[luasnip](https://github.com/L3MON4D3/LuaSnip):** Snippet engine for Neovim.
+- **[comment.nvim](https://github.com/numToStr/Comment.nvim):** Facilitates adding and removing comments in code.
+- **[pineapple.nvim](https://github.com/crahantan/pineapple.nvim):** Custom plugin to improve productivity in Neovim.
 
-## Atajos de Teclado Personalizados
+## Custom Keybindings
 
-### Configuración de Teclas
+### Key Configuration
 
-- **Líder (`<leader>`)**: `vim.g.mapleader = ' '`
+- **Leader (`<leader>`)**: `vim.g.mapleader = ' '`
 
-### Modo Normal
+### Normal Mode
 
-- **`<leader>w`**: Guardar archivo actual (`:write`)
-- **`<leader>q`**: Cerrar Neovim (`:quit`)
-- **`<leader>e`**: Alternar el explorador de archivos (`:Neotree toggle`)
-- **`<leader>l`**: Abrir Lazy (`:Lazy`)
-- **`<leader>m`**: Abrir Mason (`:Mason`)
-- **`<leader>t`**: Abrir terminal (`:terminal`)
-- **`<leader>h`**: Revelar en Neotree (`:Neotree reveal`)
-- **`<leader>bn`**: Ir al siguiente buffer (`:bnext`)
-- **`<leader>bb`**: Ir al buffer anterior (`:bprevious`)
-- **`<leader>bd`**: Cerrar buffer (`:bd`)
-- **`<leader>p`**: Ejecutar Pineapple (`:Pineapple`)
+- **`<leader>w`**: Save current file (`:write`)
+- **`<leader>q`**: Close Neovim (`:quit`)
+- **`<leader>e`**: Toggle file explorer (`:Neotree toggle`)
+- **`<leader>l`**: Open Lazy (`:Lazy`)
+- **`<leader>m`**: Open Mason (`:Mason`)
+- **`<leader>t`**: Open terminal (`:terminal`)
+- **`<leader>h`**: Reveal in Neotree (`:Neotree reveal`)
+- **`<leader>bn`**: Go to the next buffer (`:bnext`)
+- **`<leader>bb`**: Go to the previous buffer (`:bprevious`)
+- **`<leader>bd`**: Close buffer (`:bd`)
+- **`<leader>p`**: Execute Pineapple (`:Pineapple`)
 
-## Personalización
+## Customization
 
-Para ajustar esta configuración a tus necesidades:
+To adjust this configuration to your needs:
 
-- **Modificar `init.lua`**: Ajusta los parámetros y opciones según tus preferencias.
-- **Editar archivos en `lua/`**: Personaliza módulos específicos para funcionalidades adicionales.
+- **Modify `init.lua`**: Adjust parameters and options according to your preferences.
+- **Edit files in `lua/`**: Customize specific modules for additional functionalities.
 
-## Contribuciones
-
-Si deseas contribuir a mejorar esta configuración:
-
-1. Realiza un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b mejora/tu-mejora`).
-3. Realiza tus cambios y haz commit (`git commit -m 'Descripción de la mejora'`).
-4. Sube tus cambios (`git push origin mejora/tu-mejora`).
-5. Abre un Pull Request detallando tus modificaciones.
-
-## Licencia
-
-Este proyecto está bajo la licencia MIT. Consul
+```
