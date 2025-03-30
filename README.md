@@ -1,4 +1,3 @@
-```markdown
 # Personal Neovim Configuration
 
 ![Image description](./img.png)
@@ -67,4 +66,3 @@ To adjust this configuration to your needs:
 - **Modify `init.lua`**: Adjust parameters and options according to your preferences.
 - **Edit files in `lua/`**: Customize specific modules for additional functionalities.
 
-```
