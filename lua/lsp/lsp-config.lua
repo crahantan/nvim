@@ -13,5 +13,21 @@ lspconfig.clangd.setup {
 	}
 }
 
+-->eslint
+lspconfig.eslint.setup {
+	flags = {
+    allow_incremental_sync = false,
+    debounce_text_changes = 1000,
+  },
+}
+
+-->Tsserver
+lspconfig.ts_ls.setup{
+	settings = {
+	}
+}
+
+
+
 
 
