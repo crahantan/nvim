@@ -27,6 +27,14 @@ lspconfig.ts_ls.setup{
 	}
 }
 
+-->Omnisharp
+lspconfig.omnisharp.setup {
+	cmd = { vim.fn.stdpath("data") .. "/mason/bin/omnisharp" },
+	root_dir = require('lspconfig').util.root_pattern("*.sln", "*.csproj", ".git"),
+	filetypes = { "cs", "csx" },
+	settings = {
+	}
+}
 
 
 
