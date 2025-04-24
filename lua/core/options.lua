@@ -9,3 +9,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = false
 vim.g.mapleader = ' '
 vim.opt.termguicolors = true
+
+--Format on save omnisharp_format_on_save
+vim.g.omnisharp_format_on_save = 1
+
