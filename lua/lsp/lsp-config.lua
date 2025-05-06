@@ -36,6 +36,11 @@ lspconfig.omnisharp.setup {
 	}
 }
 
+-->Pyright
+lspconfig.pyright.setup {
+	settings = {}
+}
+
 
 
 
