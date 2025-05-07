@@ -60,6 +60,8 @@ return {
 			root_dir = function()
 				return vim.fs.dirname(vim.fs.find(".git", { upward = true })[1])
 			end,
+
+			--[[
 			should_attach = function(_, _)
 				if not vim.bo.buflisted then
 					logger.debug("not attaching, buffer is not 'buflisted'")
@@ -73,6 +75,8 @@ return {
 
 				return true
 			end,
+			]]
+			--
 			server = {
 				type = "nodejs", -- "nodejs" | "binary"
 				custom_server_filepath = nil,
