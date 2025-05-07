@@ -24,6 +24,4 @@ require('ui.lualine-ui')
 require('ui.pineapple_themes')
 
 -->Colorscheme
-vim.cmd [[colorscheme codedark]]
-
-
+vim.cmd [[colorscheme kanagawa-dragon]]
