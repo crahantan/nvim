@@ -1,9 +1,9 @@
-return{
-  "zbirenbaum/copilot.lua",
-  cmd = "Copilot",
-  event = "InsertEnter",
-  config = function()
-		require('copilot').setup({
+return {
+	"zbirenbaum/copilot.lua",
+	cmd = "Copilot",
+	event = "InsertEnter",
+	config = function()
+		require("copilot").setup({
 			panel = {
 				enabled = true,
 				auto_refresh = true,
@@ -12,21 +12,21 @@ return{
 					jump_next = "]]",
 					accept = "<CR>",
 					refresh = "gr",
-					open = "<M-CR>"
+					open = "<M-CR>",
 				},
 				layout = {
 					position = "bottom", -- | top | left | right | horizontal | vertical
-					ratio = 0.4
+					ratio = 0.4,
 				},
 			},
 			suggestion = {
 				enabled = true,
-				auto_trigger = false,
+				auto_trigger = true,
 				hide_during_completion = true,
 				debounce = 75,
 				trigger_on_accept = true,
 				keymap = {
-					accept = "<Tab>",
+					accept = "<C-TAB>",
 					accept_word = false,
 					accept_line = false,
 					next = "<M-]>",
@@ -54,9 +54,9 @@ return{
 				trace_lsp_progress = false,
 				log_lsp_messages = false,
 			},
-			copilot_node_command = 'node', -- Node.js version must be > 20
+			copilot_node_command = "node", -- Node.js version must be > 20
 			workspace_folders = {},
-			copilot_model = "sonnet",  -- Current LSP default is gpt-35-turbo, supports gpt-4o-copilot
+			copilot_model = "sonnet", -- Current LSP default is gpt-35-turbo, supports gpt-4o-copilot
 			root_dir = function()
 				return vim.fs.dirname(vim.fs.find(".git", { upward = true })[1])
 			end,
@@ -79,5 +79,5 @@ return{
 			},
 			server_opts_overrides = {},
 		})
-  end,
+	end,
 }
