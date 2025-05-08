@@ -8,4 +8,5 @@ return {
     "oxfist/night-owl.nvim",
     "kyazdani42/blue-moon",
     "NTBBloodbath/doom-one.nvim",
+    "rakr/vim-one",
 }
