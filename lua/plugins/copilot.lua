@@ -26,7 +26,7 @@ return {
 				debounce = 75,
 				trigger_on_accept = true,
 				keymap = {
-					accept = "<C-TAB>",
+					accept = "<M-TAB>",
 					accept_word = false,
 					accept_line = false,
 					next = "<M-]>",

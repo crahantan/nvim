@@ -23,6 +23,6 @@ require("ui.lualine-ui")
 require("ui.pineapple_themes")
 
 -->Colorscheme
-vim.cmd([[colorscheme carbonfox]])
+vim.cmd([[colorscheme github_dark_default]])
 
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"

@@ -9,4 +9,5 @@ return {
     "kyazdani42/blue-moon",
     "NTBBloodbath/doom-one.nvim",
     "rakr/vim-one",
+    "projekt0n/github-nvim-theme",
 }
