@@ -1,47 +1,42 @@
-local lspconfig =	require('lspconfig')
+local lspconfig = require("lspconfig")
 
 -->Lua_ls
-lspconfig.lua_ls.setup {
-	settings = {
-
-	}
-}
+lspconfig.lua_ls.setup({
+	settings = {},
+})
 
 -->clangd
-lspconfig.clangd.setup {
-	settings = {
-	}
-}
+lspconfig.clangd.setup({
+	settings = {},
+})
 
 -->eslint
-lspconfig.eslint.setup {
+lspconfig.eslint.setup({
 	flags = {
-    allow_incremental_sync = false,
-    debounce_text_changes = 1000,
-  },
-}
+		allow_incremental_sync = false,
+		debounce_text_changes = 1000,
+	},
+})
 
 -->Tsserver
-lspconfig.ts_ls.setup{
-	settings = {
-	}
-}
+lspconfig.ts_ls.setup({
+	settings = {},
+})
 
 -->Omnisharp
-lspconfig.omnisharp.setup {
+lspconfig.omnisharp.setup({
 	cmd = { vim.fn.stdpath("data") .. "/mason/bin/omnisharp" },
-	root_dir = require('lspconfig').util.root_pattern("*.sln", "*.csproj", ".git"),
+	root_dir = require("lspconfig").util.root_pattern("*.sln", "*.csproj", ".git"),
 	filetypes = { "cs", "csx" },
-	settings = {
-	}
-}
+	settings = {},
+})
 
 -->Pyright
-lspconfig.pyright.setup {
-	settings = {}
-}
+lspconfig.pyright.setup({
+	settings = {},
+})
 
-
-
-
-
+-->Bashl
+lspconfig.bashls.setup({
+	settings = {},
+})
