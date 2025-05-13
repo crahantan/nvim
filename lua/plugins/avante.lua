@@ -22,9 +22,9 @@ return {
 					ghost_text = true, -- Asegúrate de que esto esté activado
 					highlight = "Comment", -- El color para el texto fantasma
 				},
-				trigger_characters = {}, -- Vacío para que funcione en cualquier carácter
-				debounce_ms = 200, -- Ajusta esto a un valor más bajo para mayor rapidez
-				accept_key = "<M-Tab>", -- Tecla para aceptar sugerencia
+				trigger_characters = { ".", ":", "(", "[", "{" }, -- Añadir caracteres de activación comunes
+				debounce_ms = 100, -- Reducir el tiempo de espera para mayor rapidez
+				accept_key = "<Tab>", -- Cambiar la tecla para aceptar sugerencia a una más común
 			},
 		},
 		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
