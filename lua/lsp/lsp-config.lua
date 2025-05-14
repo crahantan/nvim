@@ -1,5 +1,7 @@
 local lspconfig = require("lspconfig")
 
+local mason_bin = "/home/crahantan/.local/share/nvim/mason/bin/"
+
 -->Lua_ls
 lspconfig.lua_ls.setup({
 	settings = {},
@@ -37,6 +39,7 @@ lspconfig.ts_ls.setup({
 
 -->Omnisharp
 lspconfig.omnisharp.setup({
+	cmd = { mason_bin .. "omnisharp" },
 	settings = {},
 })
 
