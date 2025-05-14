@@ -11,4 +11,5 @@ return {
     "rakr/vim-one",
     "projekt0n/github-nvim-theme",
     "ellisonleao/gruvbox.nvim",
+    "mhartington/oceanic-next",
 }

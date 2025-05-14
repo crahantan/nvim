@@ -1,3 +1,6 @@
+-- Define 'vim' as a global variable for linting purposes
+_G.vim = vim
+
 --->> Configuration
 -->Options Config
 require("core.options")
@@ -23,6 +26,6 @@ require("ui.lualine-ui")
 require("ui.pineapple_themes")
 
 -->Colorscheme
-vim.cmd([[colorscheme kanagawa-wave]])
+vim.cmd([[colorscheme github_dark_colorblind]])
 
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
