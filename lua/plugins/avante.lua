@@ -15,17 +15,6 @@ return {
 				max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
 				--reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
 			},
-			auto_suggestions = {
-				enabled = true,
-				display = {
-					inline = true, -- Esto es crucial para mostrar texto fantasma como Copilot
-					ghost_text = true, -- Asegúrate de que esto esté activado
-					highlight = "Comment", -- El color para el texto fantasma
-				},
-				trigger_characters = { ".", ":", "(", "[", "{" }, -- Añadir caracteres de activación comunes
-				debounce_ms = 100, -- Reducir el tiempo de espera para mayor rapidez
-				accept_key = "<Tab>", -- Cambiar la tecla para aceptar sugerencia a una más común
-			},
 		},
 		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 		build = "make",

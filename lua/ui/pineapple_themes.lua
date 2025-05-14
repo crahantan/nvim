@@ -10,4 +10,5 @@ return {
     "NTBBloodbath/doom-one.nvim",
     "rakr/vim-one",
     "projekt0n/github-nvim-theme",
+    "ellisonleao/gruvbox.nvim",
 }
