@@ -9,10 +9,30 @@ local eslint_d_fmt = null_ls.register(null_ls.builtins.formatting.prettier.with(
 	args = { "--fix-to-stdout", "--stdin", "--stdin-filename", "$FILENAME" },
 }))
 
+-- Registrar una fuente manual completa
+local eslint_source = {
+	name = "eslint_d_manual",
+	method = null_ls.methods.FORMATTING,
+	filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+	generator = {
+		fn = function(params)
+			return {
+				{
+					event = "start",
+					command = "eslint_d",
+					args = { "--fix-to-stdout", "--stdin", "--stdin-filename", params.bufname },
+					to_stdin = params.content,
+				},
+			}
+		end,
+	},
+}
+
 -->null_ls config
 null_ls.setup({
 	sourcer = {
 		eslint_d_fmt,
+		eslint_source,
 	},
 	-- Configuración adicional si la necesitas
 	debug = true,
