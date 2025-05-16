@@ -93,7 +93,7 @@ lspconfig.bashls.setup({
 lspconfig.prismals.setup({
 	cmd = { "prisma-language-server", "--stdio" },
 	filetypes = { "prisma" },
-	root_dir = require("lspconfig").util.root_pattern("*.prisma", ".git"),
+	root_dir = lspconfig.util.root_pattern("*.prisma", ".git"),
 	settings = {
 		prisma = {
 			prismaFmtBinPath = "prisma-fmt",
