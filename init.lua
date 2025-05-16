@@ -25,5 +25,8 @@ require("ui.lualine-ui")
 -->Pineapple themes
 require("ui.pineapple_themes")
 
+-->Diagnosticos
+require("functions.show-diagnostics")
+
 -->Colorscheme
 vim.cmd([[colorscheme github_dark_colorblind]])
