@@ -1,6 +1,22 @@
 local lspconfig = require("lspconfig")
-
+local null_ls = require("null-ls")
 local mason_bin = "/home/crahantan/.local/share/nvim/mason/bin/"
+
+-- Registrar una fuente manual básica
+local eslint_d_fmt = null_ls.register(null_ls.builtins.formatting.prettier.with({
+	filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+	command = "eslint_d",
+	args = { "--fix-to-stdout", "--stdin", "--stdin-filename", "$FILENAME" },
+}))
+
+-->null_ls config
+null_ls.setup({
+	sourcer = {
+		eslint_d_fmt,
+	},
+	-- Configuración adicional si la necesitas
+	debug = true,
+})
 
 -->Lua_ls
 lspconfig.lua_ls.setup({

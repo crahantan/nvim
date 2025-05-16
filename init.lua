@@ -27,5 +27,3 @@ require("ui.pineapple_themes")
 
 -->Colorscheme
 vim.cmd([[colorscheme github_dark_colorblind]])
-
-vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
