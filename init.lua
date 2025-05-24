@@ -29,4 +29,4 @@ require("ui.pineapple_themes")
 require("functions.show-diagnostics")
 
 -->Colorscheme
-vim.cmd([[colorscheme github_dark_colorblind]])
+vim.cmd([[colorscheme nordfox]])
