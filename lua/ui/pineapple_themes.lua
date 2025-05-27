@@ -12,4 +12,5 @@ return {
     "projekt0n/github-nvim-theme",
     "ellisonleao/gruvbox.nvim",
     "mhartington/oceanic-next",
+    "pineapplegiant/spaceduck",
 }
