@@ -13,4 +13,8 @@ return {
     "ellisonleao/gruvbox.nvim",
     "mhartington/oceanic-next",
     "pineapplegiant/spaceduck",
+    "lalitmee/cobalt2.nvim",
+    "navarasu/onedark.nvim",
+    "jnurmine/Zenburn",
+    "stephengolub/zenburn.nvim",
 }
