@@ -30,6 +30,8 @@ return {
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- Snippets
+				{ name = "codeium" }, -- Codeium AI completions
+				{ name = 'cmp_tabnine' }, -- Tabnine AI completions
 			}, {
 				{ name = "buffer" },
 				{ name = "path" },

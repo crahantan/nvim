@@ -1,6 +1,6 @@
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
-local mason_bin = "/home/crahantan/.local/share/nvim/mason/bin/"
+local mason_bin = "/Users/blacknorange/.local/share/nvim/mason/bin/"
 
 -- Registrar una fuente manual básica
 local eslint_d_fmt = null_ls.register(null_ls.builtins.formatting.prettier.with({
@@ -73,11 +73,6 @@ lspconfig.ts_ls.setup({
 	settings = {},
 })
 
--->Omnisharp
-lspconfig.omnisharp.setup({
-	cmd = { mason_bin .. "omnisharp" },
-	settings = {},
-})
 
 -->Pyright
 lspconfig.pyright.setup({
