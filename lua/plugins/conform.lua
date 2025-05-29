@@ -14,11 +14,11 @@ return {
 				cs = {
 					-- "lsp_format" le dice a conform que use cualquier LSP adjunto que soporte formato
 					-- Conform automáticamente detectará Omnisharp si está adjunto y lo usará
-					"clang-format",
+					"lsp_format",
 					-- Puedes agregar formatters de fallback aquí si tuvieras otros (ej: dotnet-format)
 					-- { "dotnet-format" }
 				},
-				csx = { "clang-format" }, -- También para archivos csx
+				csx = { "lsp_format" }, -- También para archivos csx
 			},
 
 			-- Conform puede formatear automáticamente al guardar

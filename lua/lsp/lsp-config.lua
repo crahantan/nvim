@@ -100,3 +100,8 @@ lspconfig.prismals.setup({
 		vim.api.nvim_buf_set_option(bufnr, "syntax", "enable")
 	end,
 })
+
+-->csharp-ls
+lspconfig.csharp_ls.setup({
+	settings = {}
+})

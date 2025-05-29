@@ -49,6 +49,7 @@
   "render-markdown.nvim": { "branch": "main", "commit": "4a39681990fb515d00dd898de3d7bf2973805f1a" },
   "sonokai": { "branch": "master", "commit": "f59c796780655c3b9da442d310ad2f2d735f2e56" },
   "spaceduck": { "branch": "main", "commit": "350491f19343b24fa85809242089caa02d4dadce" },
+  "tabnine-nvim": { "branch": "master", "commit": "ccb7f512c34cd8e03a52de3fde9b5aa97057d2f2" },
   "telescope.nvim": { "branch": "master", "commit": "b4da76be54691e854d3e0e02c36b0245f945c2c7" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
