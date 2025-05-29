@@ -50,10 +50,10 @@ return {
 				["<S-Tab>"] = cmp.mapping.select_prev_item(),
 			}),
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp",    menu = "[LSP]" },
-				{ name = "luasnip",     menu = "[Snip]" },
-				{ name = "codeium",     menu = "[Codeium]" },
-				{ name = "cmp_tabnine", menu = "[TabNine]" },
+				{ name = "nvim_lsp", menu = "[LSP]" },
+				{ name = "luasnip",  menu = "[Snip]" },
+				{ name = "codeium",  menu = "[Codeium]" },
+				{ name = "tabnine",  menu = "[TabNine]" },
 			}, {
 				{ name = "buffer", menu = "[Buffer]" },
 				{ name = "path",   menu = "[Path]" },
