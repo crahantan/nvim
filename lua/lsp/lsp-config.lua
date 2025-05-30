@@ -1,6 +1,6 @@
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
-local mason_bin = "/Users/blacknorange/.local/share/nvim/mason/bin/"
+local mason_bin = "/home/crahantan/.local/share/nvim/mason/bin/"
 local brew_bin = "/opt/homebrew/bin/"
 
 -- Registrar una fuente manual básica
@@ -74,7 +74,6 @@ lspconfig.ts_ls.setup({
 	settings = {},
 })
 
-
 -->Pyright
 lspconfig.pyright.setup({
 	settings = {},
@@ -103,5 +102,5 @@ lspconfig.prismals.setup({
 
 -->csharp-ls
 lspconfig.csharp_ls.setup({
-	settings = {}
+	settings = {},
 })
