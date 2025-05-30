@@ -17,4 +17,7 @@ return {
     "navarasu/onedark.nvim",
     "jnurmine/Zenburn",
     "stephengolub/zenburn.nvim",
+    "thesimonho/kanagawa-paper.nvim",
+    "sainnhe/edge",
+    "catppuccin/nvim",
 }
