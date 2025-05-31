@@ -29,4 +29,4 @@ require("ui.pineapple_themes")
 require("functions.show-diagnostics")
 
 -->Colorscheme
-vim.cmd([[colorscheme catppuccin-latte]])
+vim.cmd([[colorscheme kanagawa-paper-ink]])
