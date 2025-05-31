@@ -1,6 +1,7 @@
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
-local mason_bin = "/home/crahantan/.local/share/nvim/mason/bin/"
+local mason_bin = "/Users/blacknorange/.local/share/nvim/mason/bin/"
+local brew_bin = "/opt/homebrew/bin/"
 
 -- Registrar una fuente manual básica
 local eslint_d_fmt = null_ls.register(null_ls.builtins.formatting.prettier.with({
@@ -73,11 +74,6 @@ lspconfig.ts_ls.setup({
 	settings = {},
 })
 
--->Omnisharp
-lspconfig.omnisharp.setup({
-	cmd = { mason_bin .. "omnisharp" },
-	settings = {},
-})
 
 -->Pyright
 lspconfig.pyright.setup({
@@ -103,4 +99,9 @@ lspconfig.prismals.setup({
 		-- Habilitar el resaltado de sintaxis
 		vim.api.nvim_buf_set_option(bufnr, "syntax", "enable")
 	end,
+})
+
+-->csharp-ls
+lspconfig.csharp_ls.setup({
+	settings = {}
 })

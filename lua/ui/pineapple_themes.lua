@@ -12,4 +12,12 @@ return {
     "projekt0n/github-nvim-theme",
     "ellisonleao/gruvbox.nvim",
     "mhartington/oceanic-next",
+    "pineapplegiant/spaceduck",
+    "lalitmee/cobalt2.nvim",
+    "navarasu/onedark.nvim",
+    "jnurmine/Zenburn",
+    "stephengolub/zenburn.nvim",
+    "thesimonho/kanagawa-paper.nvim",
+    "sainnhe/edge",
+    "catppuccin/nvim",
 }
