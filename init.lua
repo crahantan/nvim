@@ -29,4 +29,5 @@ require("ui.pineapple_themes")
 require("functions.show-diagnostics")
 
 -->Colorscheme
-vim.cmd([[colorscheme kanagawa]])
+
+vim.cmd([[colorscheme kanagawa-paper]])

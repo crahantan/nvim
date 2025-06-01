@@ -20,4 +20,5 @@ return {
     "thesimonho/kanagawa-paper.nvim",
     "sainnhe/edge",
     "catppuccin/nvim",
+    "tiagovla/tokyodark.nvim",
 }
