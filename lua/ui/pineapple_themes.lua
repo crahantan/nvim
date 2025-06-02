@@ -16,9 +16,9 @@ return {
     "lalitmee/cobalt2.nvim",
     "navarasu/onedark.nvim",
     "jnurmine/Zenburn",
-    "stephengolub/zenburn.nvim",
     "thesimonho/kanagawa-paper.nvim",
     "sainnhe/edge",
     "catppuccin/nvim",
     "tiagovla/tokyodark.nvim",
+    "savq/melange-nvim",
 }
