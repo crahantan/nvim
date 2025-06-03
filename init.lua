@@ -30,4 +30,4 @@ require("functions.show-diagnostics")
 
 -->Colorscheme
 
-vim.cmd([[colorscheme kanagawa-lotus]])
+vim.cmd([[colorscheme kanagawa-dragon]])

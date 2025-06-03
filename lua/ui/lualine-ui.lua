@@ -6,17 +6,17 @@ local lualine = require("lualine")
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-	bg       = '#e6deb3',
-	fg       = '#545464',
-	yellow   = '#8a8a44',
-	cyan     = '#597b75',
-	darkblue = '#a9a9c4',
-	green    = '#6f894e',
-	orange   = '#b6927b',
-	violet   = '#9d9ab2',
-	magenta  = '#b35b79',
-	blue     = '#6693bf',
-	red      = '#c84053',
+	bg       = '#181616',  -- Dragon background
+	fg       = '#DCD7BA',  -- Dragon foreground
+	yellow   = '#DCA561',  -- Dragon yellow
+	cyan     = '#6A9589',  -- Dragon cyan
+	darkblue = '#658594',  -- Dragon blue darker
+	green    = '#87A987',  -- Dragon green
+	orange   = '#FFA066',  -- Dragon orange
+	violet   = '#957FB8',  -- Dragon violet
+	magenta  = '#D27E99',  -- Dragon magenta
+	blue     = '#7E9CD8',  -- Dragon blue
+	red      = '#C34043',  -- Dragon red
 }
 
 local conditions = {
@@ -82,7 +82,7 @@ ins_left({
 	function()
 		return "▊"
 	end,
-	color = { fg = colors.blue },     -- Sets highlighting of component
+	color = { fg = colors.blue }, -- Sets highlighting of component
 	padding = { left = 0, right = 1 }, -- We don't need space before this
 })
 
@@ -178,7 +178,7 @@ ins_left({
 
 -- Add components to right sections
 ins_right({
-	"o:encoding",      -- option component same as &encoding in viml
+	"o:encoding", -- option component same as &encoding in viml
 	fmt = string.upper, -- I'm not sure why it's upper case either ;)
 	cond = conditions.hide_in_width,
 	color = { fg = colors.green, gui = "bold" },
