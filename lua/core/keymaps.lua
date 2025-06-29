@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 -->Normal
 vim.keymap.set("n", "<leader>w", "<cmd>write<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>quit<cr>")
+vim.keymap.set("n", "<leader>Q", "<cmd>q!<cr>")
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>")
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>")
 vim.keymap.set("n", "<leader>m", "<cmd>Mason<cr>")
@@ -16,3 +17,4 @@ vim.keymap.set("n", "<leader>p", "<cmd>Pineapple<cr>")
 vim.keymap.set("n", "<leader>cc", "<cmd>Copilot panel<cr>")
 vim.keymap.set("n", "<leader>k", "<C-w>l")
 vim.keymap.set("n", "<leader>c", "<cmd>nohlsearch<cr>")
+vim.keymap.set("n", "<leader>W", "<cmd>write!<cr>")

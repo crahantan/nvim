@@ -1,6 +1,11 @@
 -- Define 'vim' as a global variable for linting purposes
 _G.vim = vim
 
+-- Neovim Configuration File
+
+
+
+
 --->> Configuration
 -->Options Config
 require("core.options")
