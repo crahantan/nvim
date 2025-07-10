@@ -105,3 +105,8 @@ lspconfig.prismals.setup({
 lspconfig.csharp_ls.setup({
 	settings = {}
 })
+
+-->html
+lspconfig.html_ls.setup({
+	settings = {}
+})
