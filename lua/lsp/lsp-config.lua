@@ -107,6 +107,6 @@ lspconfig.csharp_ls.setup({
 })
 
 -->html
-lspconfig.html_ls.setup({
+lspconfig.html.setup({
 	settings = {}
 })
