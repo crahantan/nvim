@@ -11,9 +11,9 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true
 
 -- Configuración de transparencia
-vim.opt.winblend = 15       -- Transparencia para ventanas flotantes
-vim.opt.pumblend = 15       -- Transparencia para el menú popup
-vim.g.neovide_transparency = 0.85  -- Para Neovide (cliente GUI)
+vim.opt.winblend = 0             -- Transparencia para ventanas flotantes
+vim.opt.pumblend = 0             -- Transparencia para el menú popup
+vim.g.neovide_transparency = 1.0 -- Para Neovide (cliente GUI)
 
 --Format on save omnisharp_format_on_save
 vim.g.omnisharp_format_on_save = 1
