@@ -110,3 +110,8 @@ lspconfig.csharp_ls.setup({
 lspconfig.html.setup({
 	settings = {}
 })
+
+-->json
+lspconfig.jsonls.setup({
+	settings = {}
+})
