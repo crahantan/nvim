@@ -21,4 +21,5 @@ return {
     "catppuccin/nvim",
     "tiagovla/tokyodark.nvim",
     "savq/melange-nvim",
+    "folke/tokyonight.nvim",
 }
