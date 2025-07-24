@@ -5,7 +5,8 @@ local lualine = require("lualine")
 
 -- Color table for highlights dark
 -- stylua: ignore
-local colors = {
+--Kanagawa Dragon colorscheme
+--[[local colors = {
 	bg       = '#181616', -- Dragon background
 	fg       = '#DCD7BA', -- Dragon foreground
 	yellow   = '#DCA561', -- Dragon yellow
@@ -17,6 +18,21 @@ local colors = {
 	magenta  = '#D27E99', -- Dragon magenta
 	blue     = '#7E9CD8', -- Dragon blue
 	red      = '#C34043', -- Dragon red
+}]] --
+
+--Tokyonight colorscheme
+local colors = {
+	bg       = '#1a1b26', -- Tokyonight background
+	fg       = '#c0caf5', -- Tokyonight foreground
+	yellow   = '#e0af68', -- Tokyonight yellow
+	cyan     = '#7aa2f7', -- Tokyonight cyan
+	darkblue = '#7aa2f7', -- Tokyonight blue darker
+	green    = '#9ece6a', -- Tokyonight green
+	orange   = '#ff9e64', -- Tokyonight orange
+	violet   = '#bb9af7', -- Tokyonight violet
+	magenta  = '#ff6c6b', -- Tokyonight magenta
+	blue     = '#7aa2f7', -- Tokyonight blue
+	red      = '#f7768e', -- Tokyonight red
 }
 
 local conditions = {
