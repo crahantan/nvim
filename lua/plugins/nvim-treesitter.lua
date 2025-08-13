@@ -1,3 +1,10 @@
+-- Detección de filetype
+vim.filetype.add({
+	extension = {
+		prisma = "prisma",
+	},
+})
+
 return {
 	{
 		'nvim-treesitter/nvim-treesitter',
