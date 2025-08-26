@@ -22,4 +22,5 @@ return {
     "tiagovla/tokyodark.nvim",
     "savq/melange-nvim",
     "folke/tokyonight.nvim",
+    "gamunu/vscode.nvim",
 }

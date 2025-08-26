@@ -6,7 +6,7 @@ local lualine = require("lualine")
 -- Color table for highlights dark
 -- stylua: ignore
 --Kanagawa Dragon colorscheme
---[[local colors = {
+local colors = {
 	bg       = '#181616', -- Dragon background
 	fg       = '#DCD7BA', -- Dragon foreground
 	yellow   = '#DCA561', -- Dragon yellow
@@ -18,10 +18,10 @@ local lualine = require("lualine")
 	magenta  = '#D27E99', -- Dragon magenta
 	blue     = '#7E9CD8', -- Dragon blue
 	red      = '#C34043', -- Dragon red
-}]] --
+}
 
 --Tokyonight colorscheme
-local colors = {
+--[[local colors = {
 	bg       = '#1a1b26', -- Tokyonight background
 	fg       = '#c0caf5', -- Tokyonight foreground
 	yellow   = '#e0af68', -- Tokyonight yellow
@@ -33,7 +33,7 @@ local colors = {
 	magenta  = '#ff6c6b', -- Tokyonight magenta
 	blue     = '#7aa2f7', -- Tokyonight blue
 	red      = '#f7768e', -- Tokyonight red
-}
+}]] --
 
 local conditions = {
 	buffer_not_empty = function()

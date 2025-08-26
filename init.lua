@@ -35,4 +35,4 @@ require("functions.show-diagnostics")
 
 -->Colorscheme
 
-vim.cmd([[colorscheme tokyonight-storm]])
+vim.cmd([[colorscheme vscode]])
