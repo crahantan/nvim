@@ -35,4 +35,4 @@ require("functions.show-diagnostics")
 
 -->Colorscheme
 
-vim.cmd([[colorscheme vscode]])
+vim.cmd([[colorscheme github_light_high_contrast]])
