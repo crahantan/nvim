@@ -35,4 +35,4 @@ require("functions.show-diagnostics")
 
 -->Colorscheme
 
-vim.cmd([[colorscheme github_dark]])
+vim.cmd([[colorscheme tokyonight-night]])
