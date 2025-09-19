@@ -1,4 +1,4 @@
-local lspconfig = require("lspconfig")
+local lspconfig = require("lspconfig") 
 local null_ls = require("null-ls")
 
 -- Registrar una fuente manual básica
@@ -29,7 +29,7 @@ local eslint_source = {
 
 -->null_ls config
 null_ls.setup({
-	sourcer = {
+	sources = {
 		eslint_d_fmt,
 		eslint_source,
 	},
