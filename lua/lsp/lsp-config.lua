@@ -1,7 +1,5 @@
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
-local mason_bin = "/Users/blacknorange/.local/share/nvim/mason/bin/"
-local brew_bin = "/opt/homebrew/bin/"
 
 -- Registrar una fuente manual básica
 local eslint_d_fmt = null_ls.register(null_ls.builtins.formatting.prettier.with({
