@@ -11,9 +11,9 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true
 
 -- Configuración de transparencia
-vim.opt.winblend = 0             -- Transparencia para ventanas flotantes
+vim.opt.winblend = 0
 vim.opt.pumblend = 0            -- Transparencia para el menú popup
-vim.g.neovide_transparency = 1 -- Para Neovide (cliente GUI)
+vim.g.neovide_transparency = 10 -- Para Neovide (cliente GUI)
 
 --Format on save omnisharp_format_on_save
 vim.g.omnisharp_format_on_save = 1
@@ -26,7 +26,7 @@ vim.opt.laststatus = 3
 vim.cmd([[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx lua vim.lsp.buf.format({async = false})]])
 
 -->Conform
-vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+vim.o.formatexpr = ""
 
 -->Highlight
 -->add for new FileTypes
