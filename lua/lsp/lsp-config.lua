@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig") 
 local null_ls = require("null-ls")
 
 -- Registrar una fuente manual básica
@@ -37,75 +36,93 @@ null_ls.setup({
 	debug = true,
 })
 
--->Lua_ls
-lspconfig.lua_ls.setup({
-	settings = {},
+-- LUA LS
+vim.lsp.config("lua_ls", {
+  settings = {},
 })
 
--->clangd
-lspconfig.clangd.setup({
-	settings = {},
+-- CLANGD
+vim.lsp.config("clangd", {
+  settings = {},
 })
 
--->eslint
-lspconfig.eslint.setup({
-	flags = {
-		allow_incremental_sync = false,
-		debounce_text_changes = 1000,
-	},
-	settings = {
-		eslint = {
-			packageManager = "yarn",
-			autoFixOnSave = true,
-			codeActionOnSave = {
-				enable = true,
-				mode = "all",
-			},
-			format = true,
-			workingDirectory = { mode = "auto" },
-		},
-	},
+-- ESLINT
+vim.lsp.config("eslint", {
+  flags = {
+    allow_incremental_sync = false,
+    debounce_text_changes = 1000,
+  },
+  settings = {
+    eslint = {
+      packageManager = "yarn",
+      autoFixOnSave = true,
+      codeActionOnSave = {
+        enable = true,
+        mode = "all",
+      },
+      format = true,
+      workingDirectory = { mode = "auto" },
+    },
+  },
 })
 
--->Tsserver
-lspconfig.ts_ls.setup({
-	settings = {},
+-- TS SERVER
+vim.lsp.config("ts_ls", {
+  settings = {},
+})
+
+-- PYRIGHT
+vim.lsp.config("pyright", {
+  settings = {},
+})
+
+-- BASH LS
+vim.lsp.config("bashls", {
+  settings = {},
+})
+
+-- PRISMA
+vim.lsp.config("prismals", {
+  cmd = { "prisma-language-server", "--stdio" },
+  filetypes = { "prisma" },
+  root_dir = vim.fs.dirname(vim.fs.find({ "schema.prisma", "package.json", ".git" }, { upward = true })[1]),
+  settings = {
+    prisma = {
+      prismaFmtBinPath = "prisma-fmt",
+    },
+  },
+})
+
+-- CSHARP LS
+vim.lsp.config("csharp_ls", {
+  settings = {},
+})
+
+-- HTML
+vim.lsp.config("html", {
+  settings = {},
+})
+
+-- JSON
+vim.lsp.config("jsonls", {
+  settings = {},
 })
 
 
--->Pyright
-lspconfig.pyright.setup({
-	settings = {},
-})
+-- ✨ Finalmente, habilitamos todos los servidores:
+local servers = {
+  "lua_ls",
+  "clangd",
+  "eslint",
+  "ts_ls",
+  "pyright",
+  "bashls",
+  "prismals",
+  "csharp_ls",
+  "html",
+  "jsonls",
+}
 
--->Bashl
-lspconfig.bashls.setup({
-	settings = {},
-})
-
--->Prisma
-lspconfig.prismals.setup({
-	cmd = { "prisma-language-server", "--stdio" },
-	filetypes = { "prisma" },
-	root_dir = lspconfig.util.root_pattern("schema.prisma", "package.json", ".git"),
-	settings = {
-		prisma = {
-			prismaFmtBinPath = "prisma-fmt",
-		},
-	},
-})
-
--->csharp-ls
-lspconfig.csharp_ls.setup({
-	settings = {}
-})
-
--->html
-lspconfig.html.setup({
-	settings = {}
-})
-
--->json
-lspconfig.jsonls.setup({
-	settings = {}
-})
+for _, server in ipairs(servers) do
+  vim.lsp.enable(server)
+end
