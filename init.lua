@@ -34,5 +34,4 @@ require("ui.pineapple_themes")
 require("functions.show-diagnostics")
 
 -->Colorscheme
-
-vim.cmd([[colorscheme codedark]])
+--vim.cmd([[colorscheme COLORSHCHEME_NAME]])
