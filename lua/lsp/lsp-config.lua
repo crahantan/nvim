@@ -38,91 +38,103 @@ null_ls.setup({
 
 -- LUA LS
 vim.lsp.config("lua_ls", {
-  settings = {},
+	settings = {},
 })
 
 -- CLANGD
 vim.lsp.config("clangd", {
-  settings = {},
+	settings = {},
 })
 
 -- ESLINT
 vim.lsp.config("eslint", {
-  flags = {
-    allow_incremental_sync = false,
-    debounce_text_changes = 1000,
-  },
-  settings = {
-    eslint = {
-      packageManager = "yarn",
-      autoFixOnSave = true,
-      codeActionOnSave = {
-        enable = true,
-        mode = "all",
-      },
-      format = true,
-      workingDirectory = { mode = "auto" },
-    },
-  },
+	flags = {
+		allow_incremental_sync = false,
+		debounce_text_changes = 1000,
+	},
+	settings = {
+		eslint = {
+			packageManager = "yarn",
+			autoFixOnSave = true,
+			codeActionOnSave = {
+				enable = true,
+				mode = "all",
+			},
+			format = true,
+			workingDirectory = { mode = "auto" },
+		},
+	},
 })
 
 -- TS SERVER
 vim.lsp.config("ts_ls", {
-  settings = {},
+	settings = {},
 })
 
 -- PYRIGHT
 vim.lsp.config("pyright", {
-  settings = {},
+	settings = {},
 })
 
 -- BASH LS
 vim.lsp.config("bashls", {
-  settings = {},
+	settings = {},
 })
 
 -- PRISMA
 vim.lsp.config("prismals", {
-  cmd = { "prisma-language-server", "--stdio" },
-  filetypes = { "prisma" },
-  root_dir = vim.fs.dirname(vim.fs.find({ "schema.prisma", "package.json", ".git" }, { upward = true })[1]),
-  settings = {
-    prisma = {
-      prismaFmtBinPath = "prisma-fmt",
-    },
-  },
+	cmd = { "prisma-language-server", "--stdio" },
+	filetypes = { "prisma" },
+	root_dir = vim.fs.dirname(vim.fs.find({ "schema.prisma", "package.json", ".git" }, { upward = true })[1]),
+	settings = {
+		prisma = {
+			prismaFmtBinPath = "prisma-fmt",
+		},
+	},
 })
 
 -- CSHARP LS
 vim.lsp.config("csharp_ls", {
-  settings = {},
+	settings = {},
 })
 
 -- HTML
 vim.lsp.config("html", {
-  settings = {},
+	settings = {},
 })
 
 -- JSON
 vim.lsp.config("jsonls", {
-  settings = {},
+	settings = {},
+})
+
+-- MARKSMAN
+vim.lsp.config("marksman", {
+	settings = {},
+})
+
+-- mdfomat
+vim.lsp.config("mdfomat", {
+	settings = {},
 })
 
 
--- ✨ Finalmente, habilitamos todos los servidores:
+-- Habilitamos todos los servidores:
 local servers = {
-  "lua_ls",
-  "clangd",
-  "eslint",
-  "ts_ls",
-  "pyright",
-  "bashls",
-  "prismals",
-  "csharp_ls",
-  "html",
-  "jsonls",
+	"lua_ls",
+	"clangd",
+	"eslint",
+	"ts_ls",
+	"pyright",
+	"bashls",
+	"prismals",
+	"csharp_ls",
+	"html",
+	"jsonls",
+	"marksman",
+	"mdfomat",
 }
 
 for _, server in ipairs(servers) do
-  vim.lsp.enable(server)
+	vim.lsp.enable(server)
 end
