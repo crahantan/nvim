@@ -39,7 +39,7 @@
   "nvim-lsp-installer": { "branch": "main", "commit": "17e0bfa5f2c8854d1636fcd036dc8284db136baa" },
   "nvim-lspconfig": { "branch": "master", "commit": "ab5139c99df944479e5a26495a37840fcbb1d512" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
-  "nvim-web-devicons": { "branch": "master", "commit": "3951747a909ebf19821cdfe28c76bcb88dd98ddc" },
+  "nvim-web-devicons": { "branch": "master", "commit": "16d919d768b5bc2921bd7d5a4ee76f158f7ea1c0" },
   "oceanic-next": { "branch": "master", "commit": "09833f72d5ba23de2e8bcae18f479f326f5f677a" },
   "onedark.nvim": { "branch": "master", "commit": "213c23ae45a04797572242568d5d51937181792d" },
   "pineapple": { "branch": "main", "commit": "b97cd407e749c086475e2bbf7afe1c40e95d7d1e" },
