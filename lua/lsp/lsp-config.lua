@@ -118,6 +118,11 @@ vim.lsp.config("mdfomat", {
 	settings = {},
 })
 
+-- gopls
+vim.lsp.config("gopls", {
+	settings = {}
+})
+
 
 -- Habilitamos todos los servidores:
 local servers = {
@@ -133,6 +138,7 @@ local servers = {
 	"jsonls",
 	"marksman",
 	"mdfomat",
+	"gopls",
 }
 
 for _, server in ipairs(servers) do
