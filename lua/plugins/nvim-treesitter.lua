@@ -9,6 +9,8 @@ return {
 	{
 		'nvim-treesitter/nvim-treesitter',
 
+		main = 'nvim-treesitter.configs',
+		build = ":TSUpdate",
 		spec = {
 			{ "<BS>",      desc = "Decrement Selection", mode = "x" },
 			{ "<c-space>", desc = "Increment Selection", mode = { "x", "n" } },
@@ -61,6 +63,9 @@ return {
 					goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
 				},
 			},
+			config = function(_, opts)
+				require("nvim-treesitter.configs").setup(opts)
+			end,
 		}
 	}
 }

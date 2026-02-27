@@ -2,7 +2,17 @@ local null_ls = require("null-ls")
 
 -- Registrar una fuente manual básica
 local eslint_d_fmt = null_ls.register(null_ls.builtins.formatting.prettier.with({
-	filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx",
+		"vue",
+		"svelte",
+		"astro"
+	},
 	command = "eslint_d",
 	args = { "--fix-to-stdout", "--stdin", "--stdin-filename", "$FILENAME" },
 }))
@@ -11,7 +21,17 @@ local eslint_d_fmt = null_ls.register(null_ls.builtins.formatting.prettier.with(
 local eslint_source = {
 	name = "eslint_d_manual",
 	method = null_ls.methods.FORMATTING,
-	filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx",
+		"vue",
+		"svelte",
+		"astro"
+	},
 	generator = {
 		fn = function(params)
 			return {
@@ -48,19 +68,31 @@ vim.lsp.config("clangd", {
 
 -- ESLINT
 vim.lsp.config("eslint", {
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx",
+		"vue",
+		"svelte",
+		"astro"
+	},
 	flags = {
 		allow_incremental_sync = false,
 		debounce_text_changes = 1000,
 	},
 	settings = {
 		eslint = {
-			packageManager = "yarn",
+			packageManager = "npm",
 			autoFixOnSave = true,
 			codeActionOnSave = {
 				enable = true,
 				mode = "all",
 			},
 			format = true,
+			formatOnSave = true,
 			workingDirectory = { mode = "auto" },
 		},
 	},
@@ -118,9 +150,14 @@ vim.lsp.config("mdfomat", {
 	settings = {},
 })
 
--- gopls
+-- GOPLS
 vim.lsp.config("gopls", {
 	settings = {}
+})
+
+-- TAILWINDCSS
+vim.lsp.config("tailwindcss", {
+	settings = {},
 })
 
 
@@ -139,6 +176,7 @@ local servers = {
 	"marksman",
 	"mdfomat",
 	"gopls",
+	"tailwindcss",
 }
 
 for _, server in ipairs(servers) do
