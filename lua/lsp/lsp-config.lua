@@ -160,6 +160,15 @@ vim.lsp.config("tailwindcss", {
 	settings = {},
 })
 
+-- Dockerls
+vim.lsp.config("dockerls", {
+	settings = {}
+})
+
+-- Docker docker_compose_language_service
+vim.lsp.config("docker_compose_language_service", {
+	settings = {}
+})
 
 -- Habilitamos todos los servidores:
 local servers = {
@@ -177,6 +186,8 @@ local servers = {
 	"mdfomat",
 	"gopls",
 	"tailwindcss",
+	"dockerls",
+	"docker_compose_language_service",
 }
 
 for _, server in ipairs(servers) do
