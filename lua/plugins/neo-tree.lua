@@ -4,21 +4,31 @@ return {
 		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
-			-- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
-		lazy = false, -- neo-tree will lazily load itself
-		---@module "neo-tree"
-		---@type neotree.Config?
+		lazy = false,
 		opts = {
 			filesystem = {
-				follow_current_file = enabled, -- Seguir el archivo activo
+				follow_current_file = {
+					enabled = true,
+					leave_dirs_open = false,
+				},
+				use_libuv_file_watcher = true,
+				filtered_items = {
+					visible = false,
+					hide_dotfiles = false,
+					hide_gitignored = true,
+					hide_by_name = {
+						"node_modules",
+						".next",
+						".expo",
+					},
+				},
 			},
 			window = {
-				position = "left", -- Habilitar ventana flotante
-				width = 40, -- Ajusta el ancho de la ventana flotante
-				transparency = 0.7, -- Ajusta la transparencia de la ventana flotante
+				position = "left",
+				width = 40,
 			},
 		},
 	},
