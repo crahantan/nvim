@@ -1,189 +1,170 @@
-local null_ls = require("null-ls")
+local none_ls = require("null-ls")
+local eslint_formatting = require("none-ls.formatting.eslint")
+local eslint_diagnostics = require("none-ls.diagnostics.eslint")
+local prettier_formatting = none_ls.builtins.formatting.prettierd
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
--- Registrar una fuente manual básica
-local eslint_d_fmt = null_ls.register(null_ls.builtins.formatting.prettier.with({
-	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"javascript.jsx",
-		"typescript",
-		"typescriptreact",
-		"typescript.tsx",
-		"vue",
-		"svelte",
-		"astro"
-	},
-	command = "eslint_d",
-	args = { "--fix-to-stdout", "--stdin", "--stdin-filename", "$FILENAME" },
-}))
+-->none-ls config
+local eslint_condition = function(utils)
+	return utils.root_has_file(
+		"eslint.config.js",
+		"eslint.config.ts",
+		".eslintrc.json",
+		".eslintrc.js",
+		".eslintrc.ts",
+		".eslintrc.cjs",
+		".eslintrc.yaml",
+		".eslintrc.yml"
+	)
+end
 
--- Registrar una fuente manual completa
-local eslint_source = {
-	name = "eslint_d_manual",
-	method = null_ls.methods.FORMATTING,
-	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"javascript.jsx",
-		"typescript",
-		"typescriptreact",
-		"typescript.tsx",
-		"vue",
-		"svelte",
-		"astro"
-	},
-	generator = {
-		fn = function(params)
-			return {
-				{
-					event = "start",
-					command = "eslint_d",
-					args = { "--fix-to-stdout", "--stdin", "--stdin-filename", params.bufname },
-					to_stdin = params.content,
-				},
-			}
-		end,
-	},
-}
-
--->null_ls config
-null_ls.setup({
+none_ls.setup({
+	root_dir = require("null-ls.utils").root_pattern(
+		"eslint.config.js",
+		"eslint.config.ts",
+		"turbo.json",
+		"pnpm-workspace.yaml",
+		"package.json",
+		"tsconfig.json",
+		".git"
+	),
 	sources = {
-		eslint_d_fmt,
-		eslint_source,
+		prettier_formatting.with({
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+				"vue",
+				"svelte",
+				"astro",
+				"json",
+				"yaml",
+				"prisma",
+				"markdown",
+			},
+		}),
+		eslint_formatting.with({
+			condition = eslint_condition,
+			env = {
+				ESLINT_USE_FLAT_CONFIG = "true",
+			},
+		}),
+		eslint_diagnostics.with({
+			condition = eslint_condition,
+			env = {
+				ESLINT_USE_FLAT_CONFIG = "true",
+			},
+		}),
 	},
-	-- Configuración adicional si la necesitas
-	debug = true,
+	on_attach = function(client, bufnr)
+		local ts_running = false
+		for _, c in ipairs(vim.lsp.get_clients({ bufnr = bufnr })) do
+			if c.name == "ts_ls" then
+				ts_running = true
+				break
+			end
+		end
+		if not ts_running then
+			vim.lsp.start({
+				name = "ts_ls",
+				cmd = { "typescript-language-server", "--stdio" },
+				root_dir = vim.fn.getcwd(),
+				settings = {
+					typescript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayReturnTypeHints = true,
+						},
+					},
+					javascript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+						},
+					},
+				},
+			})
+		end
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ buffer = bufnr, group = augroup })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.format({ bufnr = bufnr, async = false })
+				end,
+			})
+		end
+	end,
 })
 
--- LUA LS
-vim.lsp.config("lua_ls", {
-	settings = {},
-})
-
--- CLANGD
-vim.lsp.config("clangd", {
-	settings = {},
-})
-
--- ESLINT
-vim.lsp.config("eslint", {
+vim.lsp.config("ts_ls", {
+	cmd = { "typescript-language-server", "--stdio" },
 	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"javascript.jsx",
 		"typescript",
 		"typescriptreact",
 		"typescript.tsx",
-		"vue",
-		"svelte",
-		"astro"
-	},
-	flags = {
-		allow_incremental_sync = false,
-		debounce_text_changes = 1000,
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
 	},
 	settings = {
-		eslint = {
-			packageManager = "npm",
-			autoFixOnSave = true,
-			codeActionOnSave = {
-				enable = true,
-				mode = "all",
+		typescript = {
+			inlayHints = {
+				includeInlayParameterNameHints = "all",
+				includeInlayReturnTypeHints = true,
 			},
-			format = true,
-			formatOnSave = true,
-			workingDirectory = { mode = "auto" },
+		},
+		javascript = {
+			inlayHints = {
+				includeInlayParameterNameHints = "all",
+			},
 		},
 	},
+	root_dir = function(fname)
+		return vim.fs.root(fname, {
+			"tsconfig.json",
+			"jsconfig.json",
+			"package.json",
+			"turbo.json",
+		})
+	end,
 })
 
--- TS SERVER
-vim.lsp.config("ts_ls", {
-	settings = {},
-})
-
--- PYRIGHT
-vim.lsp.config("pyright", {
-	settings = {},
-})
-
--- BASH LS
-vim.lsp.config("bashls", {
-	settings = {},
-})
-
--- PRISMA
 vim.lsp.config("prismals", {
-	cmd = { "prisma-language-server", "--stdio" },
-	filetypes = { "prisma" },
-	root_dir = vim.fs.dirname(vim.fs.find({ "schema.prisma", "package.json", ".git" }, { upward = true })[1]),
 	settings = {
-		prisma = {
-			prismaFmtBinPath = "prisma-fmt",
+		prisma = { prismaFmtBinPath = "prisma-fmt" },
+	},
+})
+
+vim.lsp.config("tailwindcss", {
+	settings = {
+		tailwindCSS = {
+			experimental = {
+				classRegex = {
+					{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" }, -- cva()
+					{ "cx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" }, -- cx()
+					{ "cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" }, -- cn()
+				},
+			},
 		},
 	},
 })
 
--- CSHARP LS
-vim.lsp.config("csharp_ls", {
-	settings = {},
-})
-
--- HTML
-vim.lsp.config("html", {
-	settings = {},
-})
-
--- JSON
-vim.lsp.config("jsonls", {
-	settings = {},
-})
-
--- MARKSMAN
-vim.lsp.config("marksman", {
-	settings = {},
-})
-
--- mdfomat
-vim.lsp.config("mdfomat", {
-	settings = {},
-})
-
--- GOPLS
-vim.lsp.config("gopls", {
-	settings = {}
-})
-
--- TAILWINDCSS
-vim.lsp.config("tailwindcss", {
-	settings = {},
-})
-
--- Dockerls
-vim.lsp.config("dockerls", {
-	settings = {}
-})
-
--- Docker docker_compose_language_service
-vim.lsp.config("docker_compose_language_service", {
-	settings = {}
-})
-
--- Habilitamos todos los servidores:
 local servers = {
+	"ts_ls",
+	"eslint",
+	"prismals",
 	"lua_ls",
 	"clangd",
-	"eslint",
-	"ts_ls",
 	"pyright",
 	"bashls",
-	"prismals",
 	"csharp_ls",
 	"html",
 	"jsonls",
 	"marksman",
-	"mdfomat",
 	"gopls",
 	"tailwindcss",
 	"dockerls",
