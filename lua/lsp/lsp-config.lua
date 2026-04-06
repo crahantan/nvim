@@ -72,6 +72,12 @@ none_ls.setup({
 				name = "ts_ls",
 				cmd = { "typescript-language-server", "--stdio" },
 				root_dir = vim.fn.getcwd(),
+				on_attach = function(client, bufnr)
+					if client.name == "ts_ls" then
+						client.server_capabilities.documentFormattingProvider = false
+						client.server_capabilities.documentRangeFormattingProvider = false
+					end
+				end,
 				settings = {
 					typescript = {
 						inlayHints = {

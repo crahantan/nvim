@@ -10,7 +10,11 @@ return {
 				-- You can customize some of the format options for the filetype (:help conform.format)
 				rust = { "rustfmt", lsp_format = "fallback" },
 				-- Conform will run the first available formatter
-				javascript = { "prettierd", "prettier", stop_after_first = true },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
+				json = { "prettier" },
 				cs = {
 					-- "lsp_format" le dice a conform que use cualquier LSP adjunto que soporte formato
 					-- Conform automáticamente detectará Omnisharp si está adjunto y lo usará
