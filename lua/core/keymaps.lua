@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", "<cmd>write<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>quit<cr>")
 vim.keymap.set("n", "<leader>Q", "<cmd>q!<cr>")
+vim.keymap.set("n", "<leader>r", "<cmd>redo<cr>")
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>")
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>")
 vim.keymap.set("n", "<leader>m", "<cmd>Mason<cr>")
