@@ -93,7 +93,7 @@ none_ls.setup({
 				},
 			})
 		end
-		if client.supports_method("textDocument/formatting") then
+		if client:supports_method("textDocument/formatting") then
 			vim.api.nvim_clear_autocmds({ buffer = bufnr, group = augroup })
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				group = augroup,
