@@ -151,8 +151,8 @@ vim.lsp.config("tailwindcss", {
 			experimental = {
 				classRegex = {
 					{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" }, -- cva()
-					{ "cx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" }, -- cx()
-					{ "cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" }, -- cn()
+					{ "cx\\(([^)]*)\\)",  "[\"'`]([^\"'`]*).*?[\"'`]" }, -- cx()
+					{ "cn\\(([^)]*)\\)",  "[\"'`]([^\"'`]*).*?[\"'`]" }, -- cn()
 				},
 			},
 		},
@@ -167,7 +167,6 @@ local servers = {
 	"clangd",
 	"pyright",
 	"bashls",
-	"csharp_ls",
 	"html",
 	"jsonls",
 	"marksman",
@@ -175,6 +174,7 @@ local servers = {
 	"tailwindcss",
 	"dockerls",
 	"docker_compose_language_service",
+	"rust_analyzer"
 }
 
 for _, server in ipairs(servers) do
