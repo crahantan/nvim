@@ -8,8 +8,6 @@ vim.filetype.add({
 return {
 	{
 		'nvim-treesitter/nvim-treesitter',
-
-		main = 'nvim-treesitter.configs',
 		build = ":TSUpdate",
 		spec = {
 			{ "<BS>",      desc = "Decrement Selection", mode = "x" },
