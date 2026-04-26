@@ -28,17 +28,17 @@ require("ui.pineapple_themes")
 require("functions.show-diagnostics")
 
 -->Colorscheme
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme kanagawa-dragon]])
 
 --> MD render colors
 local function set_markdown_colors()
 	local colors = {
-		h1 = "#ff6c6b", -- Rojo suave
-		h2 = "#da85ef", -- Púrpura
-		h3 = "#98be65", -- Verde
-		h4 = "#51afef", -- Azul
-		h5 = "#ecbe7b", -- Amarillo
-		h6 = "#46d9ff", -- Cian
+		h1 = "#ff6c6b",    -- Rojo suave
+		h2 = "#da85ef",    -- Púrpura
+		h3 = "#98be65",    -- Verde
+		h4 = "#51afef",    -- Azul
+		h5 = "#ecbe7b",    -- Amarillo
+		h6 = "#46d9ff",    -- Cian
 		bg_code = "#1e222a", -- Fondo oscuro para código
 		bg_table = "#282c34",
 	}
