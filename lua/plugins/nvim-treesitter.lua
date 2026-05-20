@@ -14,7 +14,10 @@ return {
 			{ "<c-space>", desc = "Increment Selection", mode = { "x", "n" } },
 		},
 		opts = {
-			highlight = { enable = true },
+			highlight = {
+				enable = true,
+				additional_vim_regex_highlighting = false
+			},
 			indent = { enable = true },
 			ensure_installed = {
 				"bash",
@@ -65,5 +68,10 @@ return {
 				require("nvim-treesitter.configs").setup(opts)
 			end,
 		}
+	},
+	-- Plugin para colores en el editor exclusivo de prisma, existen tema de color con nvim-treesitter
+	{
+		"prisma/vim-prisma",
+		ft = "prisma",
 	}
 }

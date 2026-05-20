@@ -73,6 +73,7 @@ none_ls.setup({
 				cmd = { "typescript-language-server", "--stdio" },
 				root_dir = vim.fn.getcwd(),
 				on_attach = function(client, bufnr)
+					client.server_capabilities.documentHighlightProvider = false
 					if client.name == "ts_ls" then
 						client.server_capabilities.documentFormattingProvider = false
 						client.server_capabilities.documentRangeFormattingProvider = false
