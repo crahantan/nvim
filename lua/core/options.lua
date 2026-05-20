@@ -27,12 +27,3 @@ vim.cmd([[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx lua vim.lsp.buf.format({asyn
 
 -->Conform
 vim.o.formatexpr = ""
-
--->Highlight
--->add for new FileTypes
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "prisma",
-	callback = function()
-		vim.cmd("TSBufEnable highlight")
-	end,
-})

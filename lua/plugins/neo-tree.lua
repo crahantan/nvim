@@ -1,7 +1,9 @@
 return {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
+		diagnostic = {
+			enable = false,
+		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
