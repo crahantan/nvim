@@ -19,7 +19,7 @@ return {
 				"ts_ls", "eslint", "prismals", "lua_ls", "clangd",
 				"pyright", "bashls", "html", "jsonls",
 				"marksman", "gopls", "tailwindcss", "dockerls",
-				"docker_compose_language_service", "rust_analyzer",
+				"docker_compose_language_service", "rust_analyzer", "intelephense"
 			}
 
 			-- Configuración del puente

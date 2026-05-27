@@ -175,7 +175,8 @@ local servers = {
 	"tailwindcss",
 	"dockerls",
 	"docker_compose_language_service",
-	"rust_analyzer"
+	"rust_analyzer",
+	"intelephense"
 }
 
 for _, server in ipairs(servers) do
