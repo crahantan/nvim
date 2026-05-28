@@ -26,6 +26,8 @@ return {
 			mlsp.setup({
 				ensure_installed = servers,
 				automatic_installation = true,
+				auto_update = true,
+				run_on_start = true,
 			})
 
 			-- Herramientas extra (Prettier, etc.)
