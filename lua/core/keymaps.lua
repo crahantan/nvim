@@ -2,6 +2,8 @@
 vim.g.mapleader = " "
 
 -->Normal
+vim.keymap.set("n", "<C-j>", "<C-e>")
+vim.keymap.set("n", "<C-k>", "<C-y>")
 vim.keymap.set("n", "<leader>w", "<cmd>write<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>quit<cr>")
 vim.keymap.set("n", "<leader>Q", "<cmd>q!<cr>")
