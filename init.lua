@@ -28,7 +28,7 @@ require("ui.pineapple_themes")
 require("functions.show-diagnostics")
 
 -->Colorscheme
-vim.cmd([[colorscheme kanagawa-dragon]])
+--vim.cmd([[colorscheme kanagawa-dragon]])
 
 --> MD render colors
 local function set_markdown_colors()
