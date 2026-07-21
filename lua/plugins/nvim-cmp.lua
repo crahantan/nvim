@@ -46,8 +46,9 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Acepta la sugerencia con Enter
-				["<Tab>"] = cmp.mapping.select_next_item(),
-				["<S-Tab>"] = cmp.mapping.select_prev_item(),
+				["<S-Tab>"] = cmp.mapping.select_next_item(),
+				-- Pending mapping
+				--["<-Tab>"] = cmp.mapping.select_prev_item(),
 			}),
 			sources = cmp.config.sources({
 				{ name = "copilot",                 menu = "[Copilot]" },
