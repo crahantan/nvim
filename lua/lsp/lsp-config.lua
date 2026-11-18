@@ -176,7 +176,8 @@ local servers = {
 	"dockerls",
 	"docker_compose_language_service",
 	"rust_analyzer",
-	"intelephense"
+	"intelephense",
+	"cmake",
 }
 
 for _, server in ipairs(servers) do

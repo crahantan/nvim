@@ -23,6 +23,7 @@ return {
 					-- { "dotnet-format" }
 				},
 				csx = { "lsp_format" }, -- También para archivos csx
+				cmake = { lsp_format = "cmake_format" },
 			},
 
 			-- Conform puede formatear automáticamente al guardar
